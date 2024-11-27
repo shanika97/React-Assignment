@@ -7,7 +7,9 @@ import InputForm from './counter/InputForm'
 import ToggleVisibility from './counter/ToggleVisibility'
 import Properties from './components/Properties'
 import Animal from './components/Animal'
-import ListGroup3 from './components/ListGroup3'
+import ListGroup3 from './components/ListBox3'
+import Alret from './components/Alret'
+import ExampleChild from './components/ExampleChild'
 // import InputForm from './counter/InputForm'
  
 
@@ -37,10 +39,24 @@ alert("country name :"+item);
    <Properties countries={countries} heading="List of countries"/>
  <Animal animals={Animals} heading={heading}/>
 
-{/* funticon pass props */}
+{/* funticon pass props method 1 */}
  <ListGroup3 countries={countries} onSelectedItem={handleselectItems}/>
-    </>
+
+ {/* <ListGroup3 countries={countries} onSelectedItem={(item:string)=>{
+  console.log(item);
+ }}/> */}
+
+{/* children */}
+
+ <Alret>
+  <h1>hello world</h1>
+ </Alret>
+
+<ExampleChild>
+  <h2> example child information</h2>
+</ExampleChild>
+ </>
   )
 }
 
-export default App
+export default App;
