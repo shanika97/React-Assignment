@@ -15,8 +15,10 @@ function ListGroup3({countries,onSelectedItem}: ListGroup3Props) {
 
   return (
     <>
-    <h1>
+   
+
       {/* icon add */}
+      <h1 style={{color:"green", fontFamily:"cursive"}}> icons adding to page</h1>
         <AcUnitIcon/>
         <HomeIcon color="success" />
 
@@ -24,7 +26,7 @@ function ListGroup3({countries,onSelectedItem}: ListGroup3Props) {
   Here is a gentle confirmation that your action was successful.
 </Alert>
 
-    </h1>
+  
     <h2 >function pass props</h2>
   <ul className='list-group'>
     {countries.length !== 0 && countries.map((country,index)=>(
