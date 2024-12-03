@@ -41,7 +41,109 @@ const handleClose=()=>{
   setVisibleAlert(false);
 }
 
+ 
+const [human,setHuman] = useState(
+  {fname:"shanika",
+    lname:"sureka",
+    age:20,
+    contact_Details:{
+address:{
+  address_line1 :"no 23,kadawatha",
+address_line2 :"Sri Lanka",
+},
+mobile:{
+mobile_no1:123456789,
+mobile_no2:987654321
+}
+    }
+  }
+);
 
+const [address,setAddress] = useState({
+  
+  city:"colombo",
+  country:"sri lanka",
+  addressLine:"no 23"
+});
+
+{/* create object with state ,props */}
+
+
+const [book,setBook] = useState({
+  title:"javascript",
+  author:"john",
+  price:100 
+})
+
+const [lastname,setLastname] = useState("sureka");
+
+
+const click=()=>{
+  // //create object
+  // const newBook={
+  //   title :"Java",
+  //   author:"kamal",
+  //   price:200
+  // }
+
+
+  // if we want change to only price we can use spred operator
+
+  // const newBook = {
+  
+  // ...book,price:200};
+
+// without using object
+
+setBook({...book,price:400});
+  // setBook(newBook);
+  setLastname("kamal")}
+
+
+  const [name,setName] = useState({
+
+    fname:"shanika",
+    lname:"sureka",
+    age:24
+  }
+  );
+
+  // const click2=()=>{
+  //   setName({...name,age:27})
+    
+  // }
+
+  //option 1
+  const click2=()=>{
+    setName({...name,age:name.age+1})
+    
+  }
+
+  //option2
+  // const click2 = () => {
+  //   setName((prevName) => ({ ...prevName, age: prevName.age + 1 }));
+  // };
+
+//  change nested object address line 2==>India
+
+const click3 =()=>{
+  setHuman({
+    ...human,
+    contact_Details:{
+      ...human.contact_Details,
+      address:{
+        ...human.contact_Details.address,
+        address_line1:"Kolkata",
+        address_line2:"India"
+      },
+      mobile:
+      {
+        ...human.contact_Details.mobile,
+        mobile_no2:756381178
+      }
+    }
+  })
+}
   return (
     <>
    
@@ -85,9 +187,48 @@ const handleClose=()=>{
  <Buttons color='success' onClick={handleclick}>click me2</Buttons>
 {/* 
  mekedi buton eka click krnwa it passe altert eken clocse krnwa  childern vidiyt click me,hii pass wenawa  */}
- 
 
 
+<h3>
+  {human.fname +" "+human.lname} {human.age};
+  Address: {address.city+" "+address.country+" "+address.addressLine}
+</h3>
+
+
+{/* create object with state ,props */}
+
+{book.price}
+ {lastname}
+
+ <button onClick={click}>click me</button>
+
+ <br/>
+
+ {/* <button onClick={click2}>click me</button> */}
+age incremnt to click button :{name.age}
+ <button onClick={click2}>click me</button>
+
+
+ <br>
+ </br>
+
+ {/* nested object change example this one address line 2==>India
+ const [human,setHuman] = useState(
+  {fname:"shanika",
+    lname:"sureka",
+    age:20,
+    contact_Details:{
+address:{
+  address_line1 :"no 23,kadawatha",
+address_line2 :"Sri Lanka"
+}
+    }
+  }
+); */}
+
+{human.contact_Details.address.address_line1+ "  "+ human.contact_Details.address.address_line2 + " "+ human.contact_Details.mobile.mobile_no2}
+
+<button className='btn btn-primary' onClick={click3}>click me</button>
  </>
   )
 }
