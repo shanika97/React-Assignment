@@ -144,6 +144,17 @@ const click3 =()=>{
     }
   })
 }
+
+
+const [names,setNames] = useState(["shanika","sureka"]);
+const clickhandle=()=>{
+  //add
+  setNames([...names,"Madhu"]);
+  //delete
+  setNames(names.filter((name)=>name!=="sureka"));
+  // update
+   setNames(names.map((name)=>name==="sureka"?"Madu":name));
+}
   return (
     <>
    
@@ -229,6 +240,13 @@ address_line2 :"Sri Lanka"
 {human.contact_Details.address.address_line1+ "  "+ human.contact_Details.address.address_line2 + " "+ human.contact_Details.mobile.mobile_no2}
 
 <button className='btn btn-primary' onClick={click3}>click me</button>
+<br/>
+
+{/* //add delete update */}
+
+{names}
+<button className='btn btn-success' onClick={clickhandle}>click me</button>
+
  </>
   )
 }
